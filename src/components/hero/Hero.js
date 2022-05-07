@@ -1,6 +1,9 @@
 import { Box, Heading, Container, Text, Button, Stack } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 
 function Hero() {
+  const navigate = useNavigate();
+
   return (
     <>
       <Container maxW={'3xl'}>
@@ -29,10 +32,20 @@ function Hero() {
             alignSelf={'center'}
             position={'relative'}
           >
-            <Button variant={'link'} colorScheme={'black'} size={'sm'}>
+            <Button
+              onClick={() => navigate('/national')}
+              variant={'link'}
+              colorScheme={'black'}
+              size={'sm'}
+            >
               Nacionais
             </Button>
-            <Button variant={'link'} colorScheme={'black'} size={'sm'}>
+            <Button
+              onClick={() => navigate('/international')}
+              variant={'link'}
+              colorScheme={'black'}
+              size={'sm'}
+            >
               Internacionais
             </Button>
             <Box h={'32vh'} alignItems={'end'}>

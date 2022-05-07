@@ -1,8 +1,16 @@
 import React from 'react';
-import { cleanup, render } from '@testing-library/react';
+import { render } from '../../test-utils';
 import Hero from './Hero';
+import '@testing-library/jest-dom';
+import { cleanup } from '@testing-library/react';
 
 afterEach(cleanup);
+
+const mockedUsedNavigate = jest.fn();
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useNavigate: () => mockedUsedNavigate,
+}));
 
 describe('Hero', () => {
   it('should render properly', () => {
@@ -10,7 +18,7 @@ describe('Hero', () => {
     expect(container).toBeInTheDocument();
   });
 
-  it('should contain right text', () => {
+  it('should contain right text', async () => {
     const { getByText } = render(<Hero />);
     expect(getByText(/Karaokê/i)).toBeInTheDocument();
     expect(getByText(/Night/i)).toBeInTheDocument();

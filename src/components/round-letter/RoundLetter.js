@@ -11,6 +11,7 @@ function RoundLetter(props) {
       rounded={'full'}
       textAlign={'center'}
       {...props}
+      _hover={{ cursor: 'pointer' }}
     >
       <Text fontSize={'22px'}> {props.letter} </Text>
     </Box>
