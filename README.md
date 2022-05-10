@@ -15,16 +15,16 @@ The project consists in a Karaoke application that serves national and internati
 
 This project was bootstrapped with:
 
-[Create React App](https://github.com/facebook/create-react-app);
-[Chakra UI](https://chakra-ui.com/);
-[React Router DOM](https://reactrouter.com/);
-[Axios](https://axios-http.com/ptbr/);
-[EsLint](https://eslint.org/);
-[Prettier](https://prettier.io/);
-[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/);
-[Spotify API](https://developer.spotify.com/dashboard/);
-[Musixmatch API](https://developer.musixmatch.com/);
-[Vercel](https://vercel.com/).
+- [Create React App](https://github.com/facebook/create-react-app);
+- [Chakra UI](https://chakra-ui.com/);
+- [React Router DOM](https://reactrouter.com/);
+- [Axios](https://axios-http.com/ptbr/);
+- [EsLint](https://eslint.org/);
+- [Prettier](https://prettier.io/);
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/);
+- [Spotify API](https://developer.spotify.com/dashboard/);
+- [Musixmatch API](https://developer.musixmatch.com/);
+- [Vercel](https://vercel.com/).
 
 ## Available Scripts
 
