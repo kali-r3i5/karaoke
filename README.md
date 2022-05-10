@@ -4,6 +4,10 @@ This is a responsive web project intended to demonstrate how to securely use ext
 
 The project consists in a Karaoke application that serves national and international top songs , where the user can select from a great variety of artists, then the lyrics of the chosen song .
 
+## Check it online
+
+[Karaokê Night](karaoke-opal.vercel.app)
+
 ## Team Members:
 
 - Anilton Joaquim Viganigo Júnior
