@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import {
   Box,
-  Button,
   Container,
   Flex,
   Image,
@@ -15,7 +14,7 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react';
-import { AiOutlineArrowLeft } from 'react-icons/ai';
+import BottomBar from '../components/bottom-bar/BottomBar';
 
 function SongList() {
   const { uri } = useParams();
@@ -25,6 +24,23 @@ function SongList() {
   let credentials = {
     clientId: process.env.REACT_APP_CLIENT_ID,
     clientSecret: process.env.REACT_APP_CLIENT_SECRET,
+  };
+
+  const SONGS = {
+    'Bohemian Rhapsody - Remastered 2011': 18024,
+    Creep: 18644,
+    'Another One Bites The Dust - Remastered 2011': 18333,
+    "Don't Stop Me Now - Remastered 2011": 18660,
+    'Under Pressure - Remastered 2011': 18335,
+    'Dias De Luta, Dias De Gloria': 7944,
+    Evidências: 3094,
+    'Só os Loucos Sabem': 1520,
+    'Ela Vai Voltar (Todos Os Defeitos De Uma Mulher Perfeita)': 7591,
+    'Céu Azul (Ao Vivo)': 2846,
+    'Zóio De Lula': 4340,
+    'Lugar Ao Sol': 6378,
+    'Meu Novo Mundo': 15256,
+    'Só Por Uma Noite': 31012,
   };
 
   useEffect(() => {
@@ -58,7 +74,7 @@ function SongList() {
         alignItems={'center'}
         h={'100vh'}
       >
-        <Box w="full" pt={'15rem'}>
+        <Box w="full" pt={{ base: 0, md: '15rem' }}>
           <Flex
             flexDir={'row'}
             justifyContent={'space-between'}
@@ -91,24 +107,13 @@ function SongList() {
                     }
                   >
                     <Td>{songs?.name}</Td>
-                    <Td>{songs?.id}</Td>
+                    <Td>{SONGS[songs?.name] || songs?.id}</Td>
                   </Tr>
                 ))}
               </Tbody>
             </Table>
           </TableContainer>
-          <Flex w="full" justifyContent="space-between" py={12}>
-            <Button border="solid 1px black" onClick={() => navigate('/')}>
-              Home
-            </Button>
-            <Button
-              border="solid 1px black"
-              rounded="full"
-              onClick={() => navigate(-1)}
-            >
-              <AiOutlineArrowLeft />
-            </Button>
-          </Flex>
+          <BottomBar />
         </Box>
       </Flex>
     </Container>

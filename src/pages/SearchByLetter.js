@@ -30,18 +30,16 @@ function SearchByLetter({ type }) {
             />
           ))}
         </SimpleGrid>
-        <Flex w="full" justifyContent="space-between" py={12}>
-          <Button border="solid 1px black" onClick={() => navigate('/')}>
-            Home
-          </Button>
-          <Button
-            border="solid 1px black"
-            rounded="full"
-            onClick={() => navigate(-1)}
-          >
-            <AiOutlineArrowLeft />
-          </Button>
-        </Flex>
+        <Button
+          pos="absolute"
+          right={{ sm: 10, md: 480 }}
+          bottom={10}
+          border="solid 1px black"
+          rounded="full"
+          onClick={() => navigate(-1)}
+        >
+          <AiOutlineArrowLeft />
+        </Button>
       </Container>
     </Flex>
   );

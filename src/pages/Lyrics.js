@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { Box, Button, Container, Flex, Text } from '@chakra-ui/react';
+import { useParams } from 'react-router-dom';
+import { Box, Container, Flex, Text } from '@chakra-ui/react';
 import Musixmatch from 'musixmatch';
-import { AiOutlineArrowLeft } from 'react-icons/ai';
+import BottomBar from '../components/bottom-bar/BottomBar';
 
 function Lyrics() {
   const { songName, artistName } = useParams();
   const [data, setData] = useState();
-  const navigate = useNavigate();
 
   let credentials = {
     apiKey: process.env.REACT_APP_API_KEY,
@@ -52,18 +51,7 @@ function Lyrics() {
           </Text>
         )}
       </Box>
-      <Flex w="full" justifyContent="space-between" py={12}>
-        <Button border="solid 1px black" onClick={() => navigate('/')}>
-          Home
-        </Button>
-        <Button
-          border="solid 1px black"
-          rounded="full"
-          onClick={() => navigate(-1)}
-        >
-          <AiOutlineArrowLeft />
-        </Button>
-      </Flex>
+      <BottomBar />
     </Container>
   );
 }

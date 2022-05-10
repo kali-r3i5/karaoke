@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import RoundLetter from '../components/round-letter/RoundLetter';
 import axios from 'axios';
 import {
-  Button,
   Container,
   Divider,
   Flex,
@@ -14,7 +13,7 @@ import {
   Td,
   Tr,
 } from '@chakra-ui/react';
-import { AiOutlineArrowLeft } from 'react-icons/ai';
+import BottomBar from '../components/bottom-bar/BottomBar';
 
 function ArtistList({ market }) {
   const { slug } = useParams();
@@ -53,7 +52,7 @@ function ArtistList({ market }) {
 
   return (
     <Flex justifyContent={'center'} alignItems={'top'} py={'2rem'} h={'100vh'}>
-      <Container maxW={'60%'}>
+      <Container maxW={{ base: 'full', md: '60%' }}>
         <RoundLetter
           alignSelf={'center'}
           justifySelf={'center'}
@@ -76,26 +75,18 @@ function ArtistList({ market }) {
                   }
                 >
                   <Td>
-                    <Image src={artists?.images[0]?.url} h={200} />
+                    <Image
+                      src={artists?.images[0]?.url}
+                      w={{ base: 150, md: 200 }}
+                    />
                   </Td>
-                  <Td fontSize={32}>{artists?.name}</Td>
+                  <Td fontSize={{ base: 14, md: 32 }}>{artists?.name}</Td>
                 </Tr>
               ))}
             </Tbody>
           </Table>
         </TableContainer>
-        <Flex w="full" justifyContent="space-between" py={12}>
-          <Button border="solid 1px black" onClick={() => navigate('/')}>
-            Home
-          </Button>
-          <Button
-            border="solid 1px black"
-            rounded="full"
-            onClick={() => navigate(-1)}
-          >
-            <AiOutlineArrowLeft />
-          </Button>
-        </Flex>
+        <BottomBar />
       </Container>
     </Flex>
   );
