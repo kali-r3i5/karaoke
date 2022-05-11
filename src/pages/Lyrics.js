@@ -31,7 +31,7 @@ function Lyrics() {
   }, [songName, artistName, credentials.apiKey]);
 
   return (
-    <Container maxW={'2xl'}>
+    <Container maxW={'3xl'}>
       <Flex justifyContent={'center'} alignItems={'center'} h={'30vh'}>
         <Flex
           flexDir={'row'}
