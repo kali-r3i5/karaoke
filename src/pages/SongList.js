@@ -99,7 +99,8 @@ function SongList() {
               <Text>
                 Esse projeto utiliza de APIs publicas com limitação de acesso.
                 Para acessar as letras das musicas você deve clicar no botão
-                abaixo para conseguir visualizar a música desejada:
+                abaixo e fechar esse aviso para conseguir selecionar a música
+                desejada:
                 <iframe
                   title="cors"
                   width="100%"
