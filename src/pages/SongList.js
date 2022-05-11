@@ -6,20 +6,31 @@ import {
   Container,
   Flex,
   Image,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalHeader,
+  ModalOverlay,
   Table,
   TableContainer,
   Tbody,
   Td,
+  Text,
   Th,
   Thead,
   Tr,
+  useDisclosure,
 } from '@chakra-ui/react';
 import BottomBar from '../components/bottom-bar/BottomBar';
+import { FaArrowRight } from 'react-icons/fa';
 
 function SongList() {
   const { uri } = useParams();
   const navigate = useNavigate();
   const [list, setList] = useState();
+
+  const { isOpen, onClose } = useDisclosure({ defaultIsOpen: true });
 
   let credentials = {
     clientId: process.env.REACT_APP_CLIENT_ID,
@@ -74,6 +85,30 @@ function SongList() {
         alignItems={'center'}
         h={'100vh'}
       >
+        <Modal
+          motionPreset="slideInBottom"
+          onClose={onClose}
+          isOpen={isOpen}
+          size={'xl'}
+        >
+          <ModalOverlay />
+          <ModalContent pb={5}>
+            <ModalHeader color="red">ATENÇÃO!</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>
+              <Text>
+                Esse projeto utiliza de APIs publicas com limitação de acesso.
+                Para acessar as letras das musicas você deve clicar no botão
+                abaixo para conseguir visualizar a música desejada:
+                <iframe
+                  title="cors"
+                  width="100%"
+                  src="https://cors-anywhere.herokuapp.com/corsdemo"
+                />
+              </Text>
+            </ModalBody>
+          </ModalContent>
+        </Modal>
         <Box w="full" pt={{ base: 0, md: '15rem' }}>
           <Flex
             flexDir={'row'}
