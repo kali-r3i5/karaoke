@@ -7,6 +7,7 @@ import BottomBar from '../components/bottom-bar/BottomBar';
 function Lyrics() {
   const { songName, artistName } = useParams();
   const [data, setData] = useState();
+  const [err, setErr] = useState();
 
   let credentials = {
     apiKey: process.env.REACT_APP_API_KEY,
@@ -25,7 +26,7 @@ function Lyrics() {
         setData(data.lyrics.lyrics_body);
       })
       .catch(err => {
-        console.log(err.stack);
+        setErr(true);
       });
   }, [songName, artistName, credentials.apiKey]);
 
@@ -43,12 +44,12 @@ function Lyrics() {
         </Flex>
       </Flex>
       <Box bgColor="black">
-        {data ? (
-          <Text color="white">{data}</Text>
-        ) : (
+        {!data && err ? (
           <Text color="white">
             Suas Fichas se esgotaram , aguarde 1 hora para ganhar mais fichas .
           </Text>
+        ) : (
+          <Text color="white">{data}</Text>
         )}
       </Box>
       <BottomBar />

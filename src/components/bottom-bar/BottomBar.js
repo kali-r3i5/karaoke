@@ -16,10 +16,15 @@ const BottomBar = () => {
       py={6}
       bgColor="white"
     >
-      <Button border="solid 1px black" onClick={() => navigate('/')}>
+      <Button
+        border="solid 1px black"
+        onClick={() => navigate('/')}
+        color="black"
+      >
         Home
       </Button>
       <Button
+        color="black"
         border="solid 1px black"
         rounded="full"
         onClick={() => navigate(-1)}
