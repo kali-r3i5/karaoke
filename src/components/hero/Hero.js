@@ -48,17 +48,6 @@ function Hero() {
             >
               Internacionais
             </Button>
-            <Box h={'32vh'} alignItems={'end'}>
-              <Button
-                variant={'outline'}
-                colorScheme={'black'}
-                size={'sm'}
-                rounded={0}
-                mt={20}
-              >
-                Pesquisar Artista / Música
-              </Button>
-            </Box>
           </Stack>
         </Stack>
       </Container>
