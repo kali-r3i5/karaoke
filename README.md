@@ -6,7 +6,7 @@ The project consists in a Karaoke application that serves national and internati
 
 ## Check it online
 
-[Karaokê Night](karaoke-opal.vercel.app)
+[Karaokê Night](https://karaoke-opal.vercel.app)
 
 ## Team Members:
 
